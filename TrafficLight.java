@@ -5,7 +5,7 @@ import java.awt.event.*;
    public class TrafficLight extends JPanel implements MouseListener {
 	private int xClick = -9999;
 	private int yClick = -9999;
-    private int light = 0;
+    private int lightnum = 0;
 
     public TrafficLight () {
         JFrame myFrame = new JFrame();      
@@ -26,18 +26,15 @@ import java.awt.event.*;
         //conditionals that determine whether to draw a filloval
         //in a particular color
         
-
-		//g.drawOval(xClick - 50, yClick - 50, 100, 100);
-
-        if(light % 3 == 1){
+        if(lightnum % 3 == 1){
             g.setColor(Color.green);
             g.fillOval(100, 100, 200, 200);
         }
-        else if(light % 3 == 2){
+        else if(lightnum % 3 == 2){
             g.setColor(Color.yellow);
             g.fillOval(100, 350, 200, 200);
         }
-        else if(light % 3 == 0){
+        else if(lightnum % 3 == 0){
             g.setColor(Color.red);
             g.fillOval(100, 600, 200, 200);
         }
@@ -54,8 +51,7 @@ import java.awt.event.*;
 	
 	}
     public void mouseClicked (MouseEvent event) {
-        light += 1;
-        System.out.println(light);
+        lightnum++;
         repaint();
 		//this.xClick = event.getX();
 		//this.yClick = event.getY();
